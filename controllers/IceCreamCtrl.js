@@ -1,4 +1,4 @@
-restaurant.controller('IceCreamCtrl', function IceCreamCtrl($scope, RestaurantFactory){
-  $scope.total = RestaurantFactory.total;
-  $scope.RestaurantFactory = RestaurantFactory;
+restaurant.controller('IceCreamCtrl', function IceCreamCtrl($scope, IceCreamFactory){
+  $scope.total = IceCreamFactory.total;
+  $scope.IceCreamFactory = IceCreamFactory;
 });

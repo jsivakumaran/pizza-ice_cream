@@ -1,10 +1,8 @@
-restaurant.factory("RestaurantFactory", function RestaurantFactory() {
+restaurant.factory("IceCreamFactory", function IceCreamFactory() {
   var factory = {};
 
   factory.costCalculator = function(quantity) {
-    // debugger;
     factory.total = quantity * 4;
   }
-
   return factory;
 });

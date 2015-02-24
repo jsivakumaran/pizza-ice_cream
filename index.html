@@ -7,32 +7,38 @@
     <script src="app.js"></script>
     <script src="controllers/PizzaCtrl.js"></script>
     <script src="controllers/IceCreamCtrl.js"></script>
-    <script src="services/RestaurantFactory.js"></script>
+    <script src="controllers/RestoCtrl.js"></script>
+    <script src="services/PizzaFactory.js"></script>
+    <script src="services/IceCreamFactory.js"></script>
+    <script src="services/RestoFactory.js"></script>
   </head>
   <body>
     <div class="container">
 <!-- Ice Cream Controller -->
     <div class="row">
-      <div class="col-md-6" ng-controller="IceCreamCtrl">
+      <div class="col-md-3" ng-controller="IceCreamCtrl">
         <h2>Ice Cream</h2>
-        <form ng-submit="RestaurantFactory.costCalculator(scoops)">
+        <form ng-submit="IceCreamFactory.costCalculator(scoops)">
           <input name="radioButton" type="radio" ng-model="scoops" value="1"> 1 scoop<br>
           <input name="radioButton" type="radio" ng-model="scoops" value="2"> 2 scoops<br>
-          <input name="radioButton" type="radio" ng-model="scoops" value="3"> 3 scoops<br>
+          <input name="radioButton" type="radio" ng-model="scoops" value="3"> 3 scoops<br><br>
           <button type="submit" class="btn btn-success">Ice Cream!</button>
         </form>
-        <span ng-show="scoops">Total cost: ${{RestaurantFactory.total}}</span>
+        <span ng-show="scoops">Total cost: ${{IceCreamFactory.total}}</span>
       </div>
 <!-- Pizza Controller -->
-      <div class="col-md-6" ng-controller="PizzaCtrl">
+      <div class="col-md-3" ng-controller="PizzaCtrl">
         <h2>Pizza</h2>
-        <form ng-submit="RestaurantFactory.costCalculator(slices)">
+        <form ng-submit="PizzaFactory.costCalculator(slices)">
           <input name="radioB" type="radio" ng-model="slices" value="1"> 1 slice <br>
           <input name="radioB" type="radio" ng-model="slices" value="2"> 2 slices <br>
-          <input name="radioB" type="radio" ng-model="slices" value="3"> 3 slices <br>
+          <input name="radioB" type="radio" ng-model="slices" value="3"> 3 slices <br><br>
           <button type="submit" class="btn btn-success">Pizza!</button>
         </form>
-        <span ng-show="slices">Total Cost: ${{RestaurantFactory.total}}
+        <span ng-show="slices">Total Cost: ${{PizzaFactory.total}}</span>
+      </div>
+      <div class="col-md-3" ng-controller="RestoCtrl">
+        <span ng-click="RestoFactory.costCalculator()">Total Cost: ${{RestoFactory.total}}</span>
       </div>
     </div>
   </body>
